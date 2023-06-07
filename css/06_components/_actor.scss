@@ -1,0 +1,29 @@
+.ias-fsg {
+    .actor {
+        display: grid;
+        grid-template-columns: 100px auto;
+        grid-template-rows: auto;
+        grid-template-areas:
+            "img name"
+            "img class";
+        margin-right: 1rem;
+
+        &__img {
+            grid-area: img;
+            width: 100px;
+            height: 100px;
+            clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+        }
+        &__name {
+            grid-area: name;
+            align-self: center;
+            font-size: 1.5rem;
+            background-color: $inputBgOnDark;
+        }
+        &__class {
+            grid-area: class;
+            align-self: center;
+            background-color: $inputBgOnDark;
+        }
+    }
+}

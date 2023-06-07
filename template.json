@@ -1,0 +1,140 @@
+{
+    "Actor": {
+        "types": [
+            "character",
+            "npc"
+        ],
+        "templates": {
+            "base": {
+                "name": "",
+                "class": "",
+                "reserves": {
+                    "health": {
+                        "value": 0,
+                        "min": 0
+                    },
+                    "stamina": {
+                        "value": 0,
+                        "min": 0
+                    },
+                    "moral": {
+                        "value": 0,
+                        "min": 0
+                    },
+                    "drama": {
+                        "value": 0,
+                        "min": 0
+                    },
+                    "damage": {
+                        "value": 0,
+                        "min": 0
+                    },
+                    "armor": {
+                        "value": 0,
+                        "min": 0
+                    }
+                }
+            }
+        },
+        "character": {
+            "templates": [
+                "base"
+            ],
+            "status": {
+                "stress": {
+                    "value": 0,
+                    "min": 0,
+                    "max": 3,
+                    "poolMod": 0
+                },
+                "exhaustion": {
+                    "value": 0,
+                    "min": 0,
+                    "max": 3,
+                    "poolMod": 0
+                },
+                "pain": {
+                    "value": 0,
+                    "min": 0,
+                    "max": 3,
+                    "poolMod": 0
+                },
+                "hunger": {
+                    "value": 0,
+                    "min": 0,
+                    "max": 3,
+                    "poolMod": 0
+                },
+                "misc": {
+                    "value": 0,
+                    "min": 0,
+                    "max": 3,
+                    "poolMod": 0
+                }
+            },
+            "attributes": {
+                "strength": {
+                    "value": 0,
+                    "min": 0,
+                    "poolMod": 0
+                },
+                "intuition": {
+                    "value": 0,
+                    "min": 0,
+                    "poolMod": 0
+                },
+                "dexterity": {
+                    "value": 0,
+                    "min": 0,
+                    "poolMod": 0
+                },
+                "intellect": {
+                    "value": 0,
+                    "min": 0,
+                    "poolMod": 0
+                },
+                "speed": {
+                    "value": 0,
+                    "min": 0,
+                    "poolMod": 0
+                },
+                "empathy": {
+                    "value": 0,
+                    "min": 0,
+                    "poolMod": 0
+                },
+                "perception": {
+                    "value": 0,
+                    "min": 0,
+                    "poolMod": 0
+                },
+                "ego": {
+                    "value": 0,
+                    "min": 0,
+                    "poolMod": 0
+                }
+            },
+            "npc": {
+                "templates": [
+                    "base"
+                ]
+            }
+        }
+    },
+    "Item": {
+        "types": ["item", "skill"],
+        "templates": {
+          "base": {
+            "description": ""
+          }
+        },
+        "item": {
+          "templates": ["base"]
+        },
+        "skill": {
+          "templates": ["base"],
+          "name": "",
+          "value": 0
+        }
+      }
+}

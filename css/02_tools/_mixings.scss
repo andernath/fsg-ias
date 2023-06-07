@@ -1,0 +1,45 @@
+@mixin font-size($size) {
+    font-size: $size;
+    font-size: ($size / 16px) * 1rem;
+}
+
+@mixin flex($values) {
+    -webkit-box-flex: $values;
+    -moz-box-flex: $values;
+    -ms-flex: $values;
+    -webkit-flex: $values;
+    flex: $values;
+}
+
+@mixin flex-direction($direction) {
+    @if $direction == column {
+        -webkit-flex-direction: vertical;
+        -moz-flex-direction: vertical;
+        -ms-flex-direction: column;
+        -webkit-flex-direction: column;
+        flex-direction: column;
+    } @else {
+        -webkit-flex-direction: horizontal;
+        -moz-flex-direction: horizontal;
+        -ms-flex-direction: row;
+        -webkit-flex-direction: row;
+        flex-direction: row;
+    }
+}
+
+@mixin opacity($opacity) {
+    opacity: $opacity;
+    filter: alpha(opacity=($opacity * 100));
+}
+
+@mixin box-shadow($h: 10px, $v: 10px, $b: 0px, $s: 0px, $c: $black, $pre: null) {
+    -webkit-box-shadow: $pre $h $v $b $s $c;
+    -moz-box-shadow: $pre $h $v $b $s $c;
+    box-shadow: $pre $h $v $b $s $c;
+}
+
+@mixin resetBox-shadow {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}

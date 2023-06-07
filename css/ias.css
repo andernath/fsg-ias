@@ -1,0 +1,280 @@
+.ias-fsg .window-content {
+  padding: 0;
+}
+
+.ias-fsg img {
+  border: none;
+}
+
+.ias-fsg input {
+  color: #1c1c1c;
+  border: none;
+  border-radius: 1rem;
+  padding: 0 1rem;
+  height: 2rem;
+  -webkit-box-shadow: inset 2px 2px 10px 0px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: inset 2px 2px 10px 0px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 2px 2px 10px 0px rgba(0, 0, 0, 0.3);
+}
+.ias-fsg input[type=text]:focus,
+.ias-fsg input[type=number]:focus,
+.ias-fsg input[type=password]:focus,
+.ias-fsg input[type=date]:focus,
+.ias-fsg input[type=time]:focus,
+.ias-fsg input[type=search]:focus {
+  -webkit-box-shadow: 0 0 5px 0px #f4af00;
+  -moz-box-shadow: 0 0 5px 0px #f4af00;
+  box-shadow: 0 0 5px 0px #f4af00;
+  outline: 2px solid #f4af00;
+}
+
+.ias-fsg .nav {
+  background: #f4af00;
+  display: flex;
+  position: relative;
+  justify-content: space-evenly;
+}
+.ias-fsg .nav__item {
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  font-weight: 600;
+  color: #524115;
+}
+.ias-fsg .nav__item:hover {
+  background: #f4e5bf;
+  color: #1c1c1c;
+  text-shadow: none;
+}
+.ias-fsg .nav .active {
+  background: #f4e5bf;
+  color: #1c1c1c;
+}
+.ias-fsg .nav__roll {
+  position: relative;
+  width: 94px;
+}
+.ias-fsg .nav__roll img {
+  position: absolute;
+  top: -24px;
+}
+
+.ias-fsg {
+  padding: 0.5rem;
+}
+.ias-fsg .sheet {
+  display: flex;
+}
+.ias-fsg .sheet__header {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: auto;
+  grid-template-areas: "status status" "actor reserves" ". reserves";
+  background-color: #1c1c1c;
+  padding: 0 1rem 0.25rem 1rem;
+  margin-top: 1rem;
+  -webkit-box-shadow: 0px -3px 6px 1px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0px -3px 6px 1px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px -3px 6px 1px rgba(0, 0, 0, 0.25);
+}
+.ias-fsg .sheet__header .actor {
+  grid-area: actor;
+}
+.ias-fsg .sheet__header .reserves {
+  grid-area: reserves;
+}
+.ias-fsg .sheet__header .status {
+  grid-area: status;
+}
+.ias-fsg .sheet__body {
+  background-color: #f4e5bf;
+  padding: 1.5rem 1rem;
+}
+.ias-fsg .sheet__body .active {
+  display: flex;
+  flex-wrap: wrap;
+}
+.ias-fsg .sheet__content {
+  display: none;
+}
+
+.ias-fsg .actor {
+  display: grid;
+  grid-template-columns: 100px auto;
+  grid-template-rows: auto;
+  grid-template-areas: "img name" "img class";
+  margin-right: 1rem;
+}
+.ias-fsg .actor__img {
+  grid-area: img;
+  width: 100px;
+  height: 100px;
+  clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+}
+.ias-fsg .actor__name {
+  grid-area: name;
+  align-self: center;
+  font-size: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.ias-fsg .actor__class {
+  grid-area: class;
+  align-self: center;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.ias-fsg .attribute {
+  margin-bottom: 0.5rem;
+}
+.ias-fsg .attribute__label {
+  font-size: 1rem;
+}
+.ias-fsg .attribute__value {
+  position: relative;
+  margin-right: 0.5rem;
+  padding-right: 10px;
+}
+.ias-fsg .attribute__image {
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  top: -10px;
+}
+.ias-fsg .attribute__poolmod {
+  cursor: pointer;
+  position: absolute;
+  color: #f4af00;
+  font-size: 27px;
+  right: 0;
+  top: -7px;
+  width: 40px;
+  text-align: center;
+}
+.ias-fsg .attribute__poolmodremover {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  cursor: pointer;
+}
+
+.ias-fsg .reserves {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: auto;
+}
+.ias-fsg .reserves .reserve {
+  display: flex;
+  margin-left: 1rem;
+  margin-bottom: 0.25rem;
+}
+.ias-fsg .reserves .reserve__img {
+  z-index: 1;
+  width: 60px;
+  height: 51px;
+}
+.ias-fsg .reserves .reserve__input {
+  display: flex;
+  margin-left: -2rem;
+  margin-top: 2px;
+  padding: 0 1rem 0 35px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-radius: 1rem;
+  height: 24px;
+  background-color: rgba(255, 255, 255, 0.5);
+  -webkit-box-shadow: 0 0 5px 0px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 0 5px 0px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 5px 0px rgba(0, 0, 0, 0.3);
+}
+.ias-fsg .reserves .reserve__input input {
+  background: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}
+.ias-fsg .reserves .reserve__input input:focus {
+  outline: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+.ias-fsg .reserves .reserve__input--health:focus-within {
+  -webkit-box-shadow: 0 0 5px 0px #a81e23;
+  -moz-box-shadow: 0 0 5px 0px #a81e23;
+  box-shadow: 0 0 5px 0px #a81e23;
+  outline: 2px solid #a81e23;
+}
+.ias-fsg .reserves .reserve__input--stamina:focus-within {
+  -webkit-box-shadow: 0 0 5px 0px #2e3f99;
+  -moz-box-shadow: 0 0 5px 0px #2e3f99;
+  box-shadow: 0 0 5px 0px #2e3f99;
+  outline: 2px solid #2e3f99;
+}
+.ias-fsg .reserves .reserve__input--moral:focus-within {
+  -webkit-box-shadow: 0 0 5px 0px #08743c;
+  -moz-box-shadow: 0 0 5px 0px #08743c;
+  box-shadow: 0 0 5px 0px #08743c;
+  outline: 2px solid #08743c;
+}
+.ias-fsg .reserves .reserve__input--drama:focus-within {
+  -webkit-box-shadow: 0 0 5px 0px #69459b;
+  -moz-box-shadow: 0 0 5px 0px #69459b;
+  box-shadow: 0 0 5px 0px #69459b;
+  outline: 2px solid #69459b;
+}
+.ias-fsg .reserves .reserve__input--damage:focus-within {
+  -webkit-box-shadow: 0 0 5px 0px #207cbc;
+  -moz-box-shadow: 0 0 5px 0px #207cbc;
+  box-shadow: 0 0 5px 0px #207cbc;
+  outline: 2px solid #207cbc;
+}
+.ias-fsg .reserves .reserve__input--armor:focus-within {
+  -webkit-box-shadow: 0 0 5px 0px #fdd416;
+  -moz-box-shadow: 0 0 5px 0px #fdd416;
+  box-shadow: 0 0 5px 0px #fdd416;
+  outline: 2px solid #fdd416;
+}
+
+.status {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 2rem;
+}
+.status__item {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  min-width: 100px;
+  margin: 0 0.25rem;
+}
+.status__label {
+  background-color: #f4af00;
+  padding: 0.25rem 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+}
+.status__images {
+  position: absolute;
+  top: -28px;
+  display: flex;
+}
+.status__img {
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+  cursor: pointer;
+}
+.status__img:first-child {
+  margin-right: 2px;
+}
+.status__img:last-child {
+  margin-left: 2px;
+}
+.status__img--active {
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+
+/*# sourceMappingURL=ias.css.map */

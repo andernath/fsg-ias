@@ -1,0 +1,57 @@
+<form class="{{cssClass}} {{actor.type}} ias-fsg" autocomplete="off">
+    <section class="sheet__header">
+        <div class="status">
+            {{#each system.status as |status key|}}
+            <div class="status__item">
+                <div class="status__images">
+                    <img class="status__img" height="24px" src="systems/ias-fsg/icons/status.png">
+                    <img class="status__img" height="24px" src="systems/ias-fsg/icons/status.png">
+                    <img class="status__img" height="24px" src="systems/ias-fsg/icons/status.png">
+                </div>
+                <span class="status__label">{{status.label}}</span>
+            </div>
+            {{/each}}
+        </div>
+        <div class="actor">
+            <div class="actor__img">
+                <img src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100" />
+            </div>
+            <input class="actor__name" name="name" type="text" value="{{actor.name}}" placeholder="{{localize 'IAS.Name' }}" />
+            <input class="actor__class" name="class" type="text" value="{{actor.class}}" placeholder="{{localize 'IAS.Class' }}" />
+        </div>
+        <div class="reserves">
+            {{#each system.reserves as |reserve key|}}
+            <div class="reserve">
+                <img class="reserve__img" src="systems/ias-fsg/icons/{{key}}.png" title="{{reserve.label}}">
+                <div class="reserve__input reserve__input--{{key}}">
+                    <input type="number" name="system.reserves.{{key}}.value" value="{{reserve.value}}"
+                        data-dtype="Number" min="{{reserve.min}}" />
+                    <!-- todo <input type="number" name="system.reserves.{{key}}.value.max" value="{{reserve.max}}" data-dtype="Number"
+                    min="{{reserve.min}}" />-->
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </section>
+    <nav class="nav" data-group="primary">
+        {{!-- Default tab is specified in actor-sheet.mjs --}}
+        <a class="nav__item" data-tab="skills">Skills*</a>
+        <a class="nav__item" data-tab="bio">Bio*</a>
+        <a class="nav__roll">
+            <img class="img d8 rollable" src="systems/ias-fsg/icons/d8.png" data-roll="d8+@rollMod">
+        </a>
+        <a class="nav__item" data-tab="items">Items*</a>
+        <a class="nav__item" data-tab="spells">Spells*</a>
+    </nav>
+    <section class="sheet__body">
+        <div class="sheet__content" data-group="primary" data-tab="skills">
+            {{> "systems/ias-fsg/templates/actor/parts/actor-skills.html"}}
+        </div>
+        <div class="sheet__content" data-group="primary" data-tab="bio">
+            {{> "systems/ias-fsg/templates/actor/parts/actor-bio.html"}}
+        </div>
+        <div class="sheet__content" data-group="primary" data-tab="items">
+            {{> "systems/ias-fsg/templates/actor/parts/actor-items.html"}}
+        </div>
+    </section>
+</form>

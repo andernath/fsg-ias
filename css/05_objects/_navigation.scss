@@ -1,0 +1,36 @@
+
+.ias-fsg {
+    .nav {
+        background: $bgGold;
+        display: flex;
+        position: relative;
+        justify-content: space-evenly;
+
+        &__item {
+            cursor: pointer;
+            padding: 0.25rem 0.5rem;
+            font-weight: 600;
+            color: $fontNav;
+
+            &:hover {
+                background: $bgLightGold;
+                color: $fontDefault;
+                text-shadow: none;
+            }
+        }
+
+        .active {
+            background: $bgLightGold;
+            color: $fontDefault;
+        }
+
+        &__roll {
+            position: relative;
+            width: 94px;
+            img {
+                position: absolute;
+                top: -24px;
+            }
+        }
+    }
+}

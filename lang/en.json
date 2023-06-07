@@ -1,0 +1,27 @@
+{
+    "IAS.Attributes": "Attributes",
+    "IAS.AttributesStrength": "Strength",
+    "IAS.AttributesIntuition": "Intuition",
+    "IAS.AttributesDexterity": "Dexterity",
+    "IAS.AttributesIntellect": "Intellect",
+    "IAS.AttributesSpeed": "Speed",
+    "IAS.AttributesEmpathy": "Empathy",
+    "IAS.AttributesPerception": "Perception",
+    "IAS.AttributesEgo": "Ego",
+    "IAS.ReservesHealth": "Health",
+    "IAS.ReservesStamina": "Stamina",
+    "IAS.ReservesDrama": "Drama",
+    "IAS.ReservesMoral": "Moral",
+    "IAS.ReservesDamage": "Damage",
+    "IAS.ReservesArmor": "Armor",
+    "IAS.Skills": "Skills",
+    "IAS.StatusStress": "Stress",
+    "IAS.StatusExhaustion": "Exhaustion",
+    "IAS.StatusPain": "Pain",
+    "IAS.StatusHunger": "Hunger",
+    "IAS.StatusMisc": "Misc",
+
+    "IAS.Name": "Name",
+    "IAS.Class": "Class",
+    "IAS.PoolMod": "Pool modificator (Attribute value x count)"
+}

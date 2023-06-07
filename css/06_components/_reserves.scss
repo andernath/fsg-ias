@@ -1,0 +1,74 @@
+.ias-fsg {
+    .reserves {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: auto;
+
+        .reserve {
+            display: flex;
+            margin-left: 1rem;
+            margin-bottom: 0.25rem;
+
+            &__img {
+                z-index: 1;
+                width: 60px;
+                height: 51px;
+            }
+
+            //todo refactor if two or one inputs (current / max) are used
+            &__input {
+                display: flex;
+                margin-left: -2rem;
+                margin-top: 2px;
+                //padding: 0 0.75rem 0 25px;
+                padding: 0 1rem 0 35px;
+                border-top-left-radius: 0;
+                border-bottom-left-radius: 0;
+                border-radius: 1rem;
+                height: 24px;
+                background-color: $inputBgOnDark;
+                @include box-shadow(0, 0, 5px, 0px, rgb(0 0 0 / 30%));
+
+                input {
+                    background: none;
+                    @include resetBox-shadow;
+                    border-radius: 0;
+                    padding: 0;
+                    margin: 0;
+                    height: 100%;
+                    //text-align: right;
+                }
+
+                input:focus {
+                    outline: none;
+                    @include resetBox-shadow;
+                }
+            }
+
+            &__input--health:focus-within {
+                @include box-shadow(0, 0, 5px, 0px, $health);
+                outline: 2px solid $health;
+            }
+            &__input--stamina:focus-within {
+                @include box-shadow(0, 0, 5px, 0px, $stamina);
+                outline: 2px solid $stamina;
+            }
+            &__input--moral:focus-within {
+                @include box-shadow(0, 0, 5px, 0px, $moral);
+                outline: 2px solid $moral;
+            }
+            &__input--drama:focus-within {
+                @include box-shadow(0, 0, 5px, 0px, $drama);
+                outline: 2px solid $drama;
+            }
+            &__input--damage:focus-within {
+                @include box-shadow(0, 0, 5px, 0px, $damage);
+                outline: 2px solid $damage;
+            }
+            &__input--armor:focus-within {
+                @include box-shadow(0, 0, 5px, 0px, $armor);
+                outline: 2px solid $armor;
+            }
+        }
+    }
+}

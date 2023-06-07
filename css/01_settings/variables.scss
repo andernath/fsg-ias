@@ -1,0 +1,21 @@
+@use "sass:color";
+
+$black: #1c1c1c;
+$gold: #f4af00;
+$health: #a81e23;
+$stamina: #2e3f99;
+$moral: #08743c;
+$drama: #69459b;
+$damage: #207cbc;
+$armor: #fdd416;
+
+$gold25: color.adjust($gold, $whiteness: 75%);
+
+$fontDefault: $black;
+$fontGold: $gold;
+$fontNav: color.mix($gold, $black, 25%);
+
+$bgDark: $black;
+$bgGold: $gold;
+$bgLightGold: $gold25;
+$inputBgOnDark: rgba(255, 255, 255, 0.5);

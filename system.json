@@ -1,0 +1,42 @@
+{
+    "id": "ias-fsg",
+    "title": "Icarus Adventure System - Freude schöner Götterfunken",
+    "description": "VTT Umsetzung für die Abenteuer Box: Freude schöner Götterfunken mit den Regeln des Icarus Adventure System.",
+    "version": "1.0.0",
+    "compatibility": {
+        "minimum": 10,
+        "verified": "10.291",
+        "maximum": 10
+    },
+    "authors": [
+        {
+            "name": "Andernath (Anja)"
+        }
+    ],
+    "esmodules": [
+        "module/ias.mjs"
+    ],
+    "styles": [
+        "css/ias.css"
+    ],
+    "scripts": [],
+    "packs": [],
+    "languages": [
+        {
+            "lang": "en",
+            "name": "English",
+            "path": "lang/en.json"
+        },
+        {
+            "lang": "de",
+            "name": "Deutsch",
+            "path": "lang/de.json"
+        }
+    ],
+    "gridDistance": 5,
+    "gridUnits": "ft",
+    "primaryTokenAttribute": "health",
+    "secondaryTokenAttribute": "stamina",
+    "url": "https://donnerhaus.eu/",
+    "changelog": "CHANGELOG.md"
+}

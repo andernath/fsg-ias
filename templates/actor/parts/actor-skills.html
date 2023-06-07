@@ -1,0 +1,17 @@
+<h2 style="flex-basis: 100%;">{{localize 'IAS.Attributes' }}</h2>
+{{#each system.attributes as |attribute key|}}
+<div class="attribute">
+    <span class="attribute__label">{{attribute.label}}</span>
+    <div class="attribute__value">
+        <input type="number" name="system.attributes.{{key}}.value" value="{{attribute.value}}" data-dtype="Number" min="{{attribute.min}}" />
+        <img class="attribute__image" height="40" width="40" src="systems/ias-fsg/icons/d8_0.png" title="{{localize 'IAS.PoolMod' }}" />
+        <span class="attribute__poolmod" title="{{localize 'IAS.PoolMod' }}" data-attribute="{{key}}">
+            {{attribute.poolMod}}
+        </span>
+        {{#if attribute.poolMod}}
+            <span class="attribute__poolmodremover" data-attribute="{{key}}">x</span>
+        {{/if}}
+    </div>
+</div>
+{{/each}}
+<h2 style="flex-basis: 100%;">{{localize 'IAS.Skills' }}</h2>

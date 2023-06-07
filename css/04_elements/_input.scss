@@ -1,0 +1,20 @@
+.ias-fsg {
+    input {
+        color: $fontDefault;
+        border: none;
+        border-radius: 1rem;
+        padding: 0 1rem;
+        height: 2rem;
+        @include box-shadow(2px, 2px, 10px, 0px, rgb(0 0 0 / 30%), inset);
+        
+    }
+    input[type="text"]:focus, 
+    input[type="number"]:focus, 
+    input[type="password"]:focus, 
+    input[type="date"]:focus, 
+    input[type="time"]:focus, 
+    input[type="search"]:focus {
+        @include box-shadow(0, 0, 5px, 0px, $gold);
+        outline: 2px solid $gold;
+    }
+}
