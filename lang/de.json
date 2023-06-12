@@ -20,8 +20,11 @@
     "IAS.StatusPain": "Schmerz",
     "IAS.StatusHunger": "Hunger",
     "IAS.StatusMisc": "Sonstiges",
+    "IAS.SpecialSkills": "Spezialfertigkeiten",
 
     "IAS.Name": "Name",
     "IAS.Class": "Klasse",
-    "IAS.PoolMod": "Pool Modifikator (Attributswert x Zähler)"
+    "IAS.PoolMod": "Pool Modifikator (Attributswert x Zähler)",
+
+    "IAS.AlertMaxPoolMod": "Du kannst maximal 2 Werte zu deinem Wurf addieren."
 }

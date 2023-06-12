@@ -20,8 +20,12 @@
     "IAS.StatusPain": "Pain",
     "IAS.StatusHunger": "Hunger",
     "IAS.StatusMisc": "Misc",
+    "IAS.SpecialSkills": "Special Skills",
+    
 
     "IAS.Name": "Name",
     "IAS.Class": "Class",
-    "IAS.PoolMod": "Pool modificator (Attribute value x count)"
+    "IAS.PoolMod": "Pool modificator (Attribute value x count)",
+
+    "IAS.AlertMaxPoolMod": "You can add a maximum of 2 values to your roll."
 }

@@ -27,4 +27,7 @@ IAS_CONFIG.attributes = {
   "empathy": "IAS.AttributesEmpathy",
   "perception": "IAS.AttributesPerception",
   "ego": "IAS.AttributesEgo"
+}
+IAS_CONFIG.alert = {
+  "maxPoolMod": "IAS.AlertMaxPoolMod"
 };

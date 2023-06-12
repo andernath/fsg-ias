@@ -1,6 +1,8 @@
 .ias-fsg {
     .attribute {
         margin-bottom: 0.5rem;
+        flex-basis: 50%;
+        min-width: 100px;
 
         &__label {
             font-size: 1rem;

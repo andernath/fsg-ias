@@ -28,6 +28,7 @@ export class IASActorSheet extends ActorSheet {
 
         if (actorData.type == 'character') {
             this._prepareCharacterData(context);
+            this._prepareItems(context);
         }
 
         context.rollData = context.actor.getRollData();
@@ -47,6 +48,25 @@ export class IASActorSheet extends ActorSheet {
         }
     }
 
+    /**
+   * @param {Object} actorData
+   *
+   * @return {undefined}
+   */
+  _prepareItems(context) {
+    const skills = [];
+
+    for (let i of context.items) {
+      i.img = i.img || DEFAULT_TOKEN;
+      if (i.type === 'skill') {
+        skills.push(i);
+      }
+    }
+
+    context.skills = skills;
+  }
+
+
     /** @override */
     activateListeners(html) {
         super.activateListeners(html);
@@ -57,6 +77,21 @@ export class IASActorSheet extends ActorSheet {
 
         html.find('.attribute__poolmod').click(this._addAttributePoolMod.bind(this));
         html.find('.attribute__poolmodremover').click(this._removeAttributePoolMod.bind(this));
+
+        html.find('.item-create').click(ev => {
+            this._onItemCreate(ev).then((item) => item.sheet.render(true));
+        });
+        html.find('.item-edit').click(ev => {
+            const sheetItem = $(ev.currentTarget).parents(".item");
+            const item = this.actor.items.get(sheetItem.data("itemId"));
+            item.sheet.render(true);
+          });
+        html.find('.item-delete').click(ev => {
+            const sheetItem = $(ev.currentTarget).parents(".item");
+            const item = this.actor.items.get(sheetItem.data("itemId"));
+            item.delete();
+            sheetItem.slideUp(200, () => this.render(false));
+          });
     }
 
     _onRoll(event) {
@@ -89,6 +124,8 @@ export class IASActorSheet extends ActorSheet {
 
         if(globalPoolMod <2){
             attributePoolMod++;
+        } else {
+            return ui.notifications.warn(game.i18n.localize(CONFIG.IAS.alert.maxPoolMod));
         }
 
         attributesCopy[attributeKey].poolMod = attributePoolMod;
@@ -104,4 +141,23 @@ export class IASActorSheet extends ActorSheet {
         attributesCopy[attributeKey].poolMod = 0;
         this.actor.update({ "system.attributes": attributesCopy});
     }
+
+
+  /**
+   * @param {Event} event
+   * @private
+   */
+  async _onItemCreate(event) {
+    event.preventDefault();
+    const header = event.currentTarget;
+    const type = header.dataset.type;
+    const name = `New ${type.capitalize()}`;
+
+    const itemData = {
+      name: name,
+      type: type
+    };
+
+    return await Item.create(itemData, {parent: this.actor});
+  }
 }

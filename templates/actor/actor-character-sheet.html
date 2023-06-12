@@ -16,8 +16,10 @@
             <div class="actor__img">
                 <img src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100" />
             </div>
-            <input class="actor__name" name="name" type="text" value="{{actor.name}}" placeholder="{{localize 'IAS.Name' }}" />
-            <input class="actor__class" name="class" type="text" value="{{actor.class}}" placeholder="{{localize 'IAS.Class' }}" />
+            <input class="actor__name" name="name" type="text" value="{{actor.name}}"
+                placeholder="{{localize 'IAS.Name' }}" />
+            <input class="actor__class" name="class" type="text" value="{{actor.class}}"
+                placeholder="{{localize 'IAS.Class' }}" />
         </div>
         <div class="reserves">
             {{#each system.reserves as |reserve key|}}
@@ -44,14 +46,8 @@
         <a class="nav__item" data-tab="spells">Spells*</a>
     </nav>
     <section class="sheet__body">
-        <div class="sheet__content" data-group="primary" data-tab="skills">
-            {{> "systems/ias-fsg/templates/actor/parts/actor-skills.html"}}
-        </div>
-        <div class="sheet__content" data-group="primary" data-tab="bio">
-            {{> "systems/ias-fsg/templates/actor/parts/actor-bio.html"}}
-        </div>
-        <div class="sheet__content" data-group="primary" data-tab="items">
-            {{> "systems/ias-fsg/templates/actor/parts/actor-items.html"}}
-        </div>
+        {{> "systems/ias-fsg/templates/actor/parts/actor-skills.html"}}
+        {{> "systems/ias-fsg/templates/actor/parts/actor-bio.html"}}
+        {{> "systems/ias-fsg/templates/actor/parts/actor-items.html"}}
     </section>
 </form>

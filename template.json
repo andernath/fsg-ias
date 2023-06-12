@@ -133,7 +133,6 @@
         },
         "skill": {
           "templates": ["base"],
-          "name": "",
           "value": 0
         }
       }
