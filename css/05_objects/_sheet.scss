@@ -28,14 +28,33 @@
         &__body {
             background-color: $bgLightGold;
             padding: 1.5rem 1rem;
-
-            .active {
-                display: flex;
-                flex-wrap: wrap;
-            }
         }
         &__content {
             display: none;
+
+            //need to break with CSS BEM methodologies 
+            &--skills.active {
+                display: grid;
+                grid-template-columns: 50% 50%;
+                grid-template-rows: auto;
+                column-gap: 1rem;
+                row-gap: 1rem;
+                grid-template-areas:
+                    "attributes specialskills"
+                    "skills specialskills";
+
+                .attributes {
+                    grid-area: attributes;
+                    display: flex;
+                    flex-wrap: wrap;
+                }
+                .skills {
+                    grid-area: skills;
+                }
+                .status {
+                    grid-area: specialskills;
+                }
+            }
         }
     }
 }

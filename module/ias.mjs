@@ -1,5 +1,7 @@
 import { IASActor } from "./documents/actor.mjs";
+import { IASItem } from "./documents/item.mjs";
 import { IASActorSheet } from "./sheets/actor-sheet.mjs";
+import { IASItemSheet } from "./sheets/item-sheet.mjs";
 import { preloadHandlebarsTemplates } from "./helpers/templates.mjs";
 import { IAS_CONFIG } from "./helpers/config.mjs";
 
@@ -10,15 +12,18 @@ Hooks.once('init', async function () {
 
     game.ias = {
         IASActor,
+        IASItem
     };
 
     Actors.unregisterSheet("core", ActorSheet);
     Actors.registerSheet("ias", IASActorSheet, { makeDefault: true });
+    Items.unregisterSheet("core", ItemSheet);
+    Items.registerSheet("ias", IASItemSheet, { makeDefault: true });
 
     return preloadHandlebarsTemplates();
 });
 
-
+/*todo
 Handlebars.registerHelper('getRollModByAttribute', function (attributesWithRollMod, attribute) {
     debugger;
     if (attributesWithRollMod) {
@@ -32,4 +37,4 @@ Handlebars.registerHelper('getRollModByAttribute', function (attributesWithRollM
     } else {
         return '0';
     }
-});
+});*/
