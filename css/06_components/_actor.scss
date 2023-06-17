@@ -16,14 +16,33 @@
         }
         &__name {
             grid-area: name;
-            align-self: center;
+            align-self: end;
+            color: $fontOnDark;
             font-size: 1.5rem;
-            background-color: $inputBgOnDark;
+            line-height: 1.5rem;
+            padding: 0 0.5rem 0.25rem 0.5rem;
+            cursor: text;
+            word-wrap: break-word;
+            word-break: break-word;
+            &--edit {
+                grid-area: name;
+                align-self: end;
+                background-color: $inputBgOnDark;
+            }
         }
         &__class {
             grid-area: class;
-            align-self: center;
-            background-color: $inputBgOnDark;
+            align-self: start;
+            color: $fontOnDark;
+            padding: 0 0.5rem 0.25rem 0.5rem;
+            cursor: text;
+            word-wrap: break-word;
+            word-break: break-word;
+            &--edit {
+                grid-area: class;
+                align-self: start;
+                background-color: $inputBgOnDark;
+            }
         }
     }
 }

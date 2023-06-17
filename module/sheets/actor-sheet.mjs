@@ -75,8 +75,11 @@ export class IASActorSheet extends ActorSheet {
 
         html.find('.status__img').click(this._toggleStatus.bind(this));
 
-        html.find('.attribute__poolmod').click(this._addAttributePoolMod.bind(this));
-        html.find('.attribute__poolmodremover').click(this._removeAttributePoolMod.bind(this));
+        html.find('.talent__poolmod').click(this._addAttributePoolMod.bind(this));
+        html.find('.talent__poolmodremover').click(this._removeAttributePoolMod.bind(this));
+
+        html.find('.viewmode').click(this._switchToEditMode.bind(this));
+        html.find('.editmode').blur(this._switchToViewMode.bind(this));
 
         html.find('.item-create').click(ev => {
             this._onItemCreate(ev).then((item) => item.sheet.render(true));
@@ -140,6 +143,29 @@ export class IASActorSheet extends ActorSheet {
 
         attributesCopy[attributeKey].poolMod = 0;
         this.actor.update({ "system.attributes": attributesCopy});
+    }
+
+    _switchToEditMode(event) {
+        event.preventDefault();
+        const element = event.currentTarget;
+        const editElement = document.querySelector('[data-element*="' + element.dataset.element + 'Edit' + '"]');
+
+        element.classList.toggle("invisible");
+        editElement.classList.toggle("invisible");
+        editElement.focus();
+
+    }
+
+    _switchToViewMode(event) {
+        event.preventDefault();
+        const editElement = event.currentTarget;
+
+        if(editElement.value === editElement.dataset.lastValue) {
+            const element = document.querySelector('[data-element*="' + editElement.dataset.element.slice(0, editElement.dataset.element.length - 4) + '"]');
+
+            element.classList.toggle("invisible");
+            editElement.classList.toggle("invisible");        
+        }
     }
 
 

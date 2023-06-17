@@ -6,7 +6,7 @@
         ],
         "templates": {
             "base": {
-                "name": "",
+                "name": "name",
                 "class": "",
                 "reserves": {
                     "health": {
@@ -133,7 +133,8 @@
         },
         "skill": {
           "templates": ["base"],
-          "value": 0
+          "value": 0,
+          "poolMod": 0
         }
       }
 }
