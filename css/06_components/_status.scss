@@ -1,37 +1,39 @@
-.status {
-    display: flex;
-    justify-content: space-evenly;
-    margin-bottom: 2rem;
-    &__item {
-        position: relative;
+.ias-fsg {
+    .status {
         display: flex;
-        justify-content: center;
-        min-width: 100px;
-        margin: 0 0.25rem;
-    }
-    &__label {
-        background-color: $bgGold;
-        padding: 0.25rem 0.5rem;
-        border-bottom-left-radius: 0.5rem;
-        border-bottom-right-radius: 0.5rem;
-    }
-    &__images {
-        position: absolute;
-        top: -28px;
-        display: flex;
-    }
-    &__img {
-        @include opacity(0.5);
-        cursor: pointer;
+        justify-content: space-evenly;
+        margin-bottom: 2rem;
+        &__item {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            min-width: 100px;
+            margin: 0 0.25rem;
+        }
+        &__label {
+            background-color: $bgGold;
+            padding: 0.25rem 0.5rem;
+            border-bottom-left-radius: 0.5rem;
+            border-bottom-right-radius: 0.5rem;
+        }
+        &__images {
+            position: absolute;
+            top: -28px;
+            display: flex;
+        }
+        &__img {
+            @include opacity(0.5);
+            cursor: pointer;
 
-        &:first-child {
-            margin-right: 2px;
-        }
-        &:last-child {
-            margin-left: 2px;
-        }
-        &--active {
-            @include opacity(1);
+            &:first-child {
+                margin-right: 2px;
+            }
+            &:last-child {
+                margin-left: 2px;
+            }
+            &--active {
+                @include opacity(1);
+            }
         }
     }
 }

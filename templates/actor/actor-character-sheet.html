@@ -16,9 +16,21 @@
             <div class="actor__img">
                 <img src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100" />
             </div>
-            <input class="actor__name" name="name" type="text" value="{{actor.name}}"
-                placeholder="{{localize 'IAS.Name' }}" />
-            <input class="actor__class" name="class" type="text" value="{{actor.class}}"
+            <span class="actor__name viewmode" data-element="actorName">
+                {{actor.name}} <i class="editpen fa-solid fa-pen"></i>
+            </span>
+            <input class="actor__name--edit editmode invisible" name="name" type="text" value="{{actor.name}}"
+                data-element="actorNameEdit" data-last-value="{{actor.name}}" placeholder="{{localize 'IAS.Name' }}" />
+            <span class="actor__class viewmode" data-element="actorClass">
+                {{#if system.class}}
+                {{system.class}}
+                {{else}}
+                <i>{{localize 'IAS.Class' }}</i>
+                {{/if}}
+                <i class="editpen fa-solid fa-pen"></i>
+            </span>
+            <input class="actor__class--edit editmode invisible" name="system.class" type="text"
+                value="{{system.class}}" data-element="actorClassEdit" data-last-value="{{system.class}}"
                 placeholder="{{localize 'IAS.Class' }}" />
         </div>
         <div class="reserves">
@@ -35,7 +47,7 @@
             {{/each}}
         </div>
     </section>
-    <nav class="nav" data-group="primary">
+    <nav class="nav tabs" data-group="primary">
         {{!-- Default tab is specified in actor-sheet.mjs --}}
         <a class="nav__item" data-tab="skills">Skills*</a>
         <a class="nav__item" data-tab="bio">Bio*</a>

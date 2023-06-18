@@ -1,0 +1,21 @@
+.ias-fsg {
+    .visible {
+        display: block;
+    }
+    .invisible {
+        display: none;
+    }
+    .viewmode {
+        &:hover {
+            .editpen {
+                display: inline;
+            }
+        }
+    }
+    .editpen {
+        display: none;
+        font-size: 0.75rem;
+        color: $fontGold;
+        margin-left: 0.25rem;
+    }
+}

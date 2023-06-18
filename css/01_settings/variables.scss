@@ -13,6 +13,8 @@ $gold25: color.adjust($gold, $whiteness: 75%);
 
 $fontDefault: $black;
 $fontGold: $gold;
+$fontOnDark: #fff;
+$fontLink: color.mix($gold, $black, 50%);
 $fontNav: color.mix($gold, $black, 25%);
 
 $bgDark: $black;

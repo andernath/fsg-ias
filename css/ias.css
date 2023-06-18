@@ -11,7 +11,7 @@
   border: none;
   border-radius: 1rem;
   padding: 0 1rem;
-  height: 2rem;
+  height: 1.8rem;
   -webkit-box-shadow: inset 2px 2px 10px 0px rgba(0, 0, 0, 0.3);
   -moz-box-shadow: inset 2px 2px 10px 0px rgba(0, 0, 0, 0.3);
   box-shadow: inset 2px 2px 10px 0px rgba(0, 0, 0, 0.3);
@@ -28,14 +28,19 @@
   outline: 2px solid #f4af00;
 }
 
-h1, h2, h3 {
+.ias-fsg h1,
+.ias-fsg h2,
+.ias-fsg h3 {
   border: none;
   flex-basis: 100%;
 }
-
-h2 {
+.ias-fsg h2 {
   font-weight: 600;
   font-size: 1.4rem;
+}
+.ias-fsg a:hover {
+  text-shadow: none;
+  color: #88660e;
 }
 
 .ias-fsg .nav {
@@ -138,50 +143,33 @@ h2 {
 }
 .ias-fsg .actor__name {
   grid-area: name;
-  align-self: center;
+  align-self: end;
+  color: #fff;
   font-size: 1.5rem;
+  line-height: 1.5rem;
+  padding: 0 0.5rem 0.25rem 0.5rem;
+  cursor: text;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+.ias-fsg .actor__name--edit {
+  grid-area: name;
+  align-self: end;
   background-color: rgba(255, 255, 255, 0.5);
 }
 .ias-fsg .actor__class {
   grid-area: class;
-  align-self: center;
+  align-self: start;
+  color: #fff;
+  padding: 0 0.5rem 0.25rem 0.5rem;
+  cursor: text;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+.ias-fsg .actor__class--edit {
+  grid-area: class;
+  align-self: start;
   background-color: rgba(255, 255, 255, 0.5);
-}
-
-.ias-fsg .attribute {
-  margin-bottom: 0.5rem;
-  flex-basis: 50%;
-  min-width: 100px;
-}
-.ias-fsg .attribute__label {
-  font-size: 1rem;
-}
-.ias-fsg .attribute__value {
-  position: relative;
-  margin-right: 0.5rem;
-  padding-right: 10px;
-}
-.ias-fsg .attribute__image {
-  cursor: pointer;
-  position: absolute;
-  right: 0;
-  top: -10px;
-}
-.ias-fsg .attribute__poolmod {
-  cursor: pointer;
-  position: absolute;
-  color: #f4af00;
-  font-size: 27px;
-  right: 0;
-  top: -7px;
-  width: 40px;
-  text-align: center;
-}
-.ias-fsg .attribute__poolmodremover {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  cursor: pointer;
 }
 
 .ias-fsg .reserves {
@@ -266,43 +254,94 @@ h2 {
   outline: 2px solid #fdd416;
 }
 
-.status {
+.ias-fsg .status {
   display: flex;
   justify-content: space-evenly;
   margin-bottom: 2rem;
 }
-.status__item {
+.ias-fsg .status__item {
   position: relative;
   display: flex;
   justify-content: center;
   min-width: 100px;
   margin: 0 0.25rem;
 }
-.status__label {
+.ias-fsg .status__label {
   background-color: #f4af00;
   padding: 0.25rem 0.5rem;
   border-bottom-left-radius: 0.5rem;
   border-bottom-right-radius: 0.5rem;
 }
-.status__images {
+.ias-fsg .status__images {
   position: absolute;
   top: -28px;
   display: flex;
 }
-.status__img {
+.ias-fsg .status__img {
   opacity: 0.5;
   filter: alpha(opacity=50);
   cursor: pointer;
 }
-.status__img:first-child {
+.ias-fsg .status__img:first-child {
   margin-right: 2px;
 }
-.status__img:last-child {
+.ias-fsg .status__img:last-child {
   margin-left: 2px;
 }
-.status__img--active {
+.ias-fsg .status__img--active {
   opacity: 1;
   filter: alpha(opacity=100);
+}
+
+.ias-fsg .talent {
+  margin-bottom: 0.5rem;
+  flex-basis: 50%;
+  min-width: 100px;
+}
+.ias-fsg .talent__label {
+  font-size: 1rem;
+}
+.ias-fsg .talent__value {
+  position: relative;
+  margin-right: 0.5rem;
+  padding-right: 10px;
+}
+.ias-fsg .talent__image {
+  cursor: pointer;
+  position: absolute;
+  right: 4px;
+  top: -2px;
+}
+.ias-fsg .talent__poolmod {
+  cursor: pointer;
+  position: absolute;
+  color: #f4af00;
+  font-size: 23px;
+  right: -1px;
+  top: -3px;
+  width: 40px;
+  text-align: center;
+}
+.ias-fsg .talent__poolmodremover {
+  position: absolute;
+  right: 0;
+  bottom: -3px;
+}
+
+.ias-fsg .visible {
+  display: block;
+}
+.ias-fsg .invisible {
+  display: none;
+}
+.ias-fsg .viewmode:hover .editpen {
+  display: inline;
+}
+.ias-fsg .editpen {
+  display: none;
+  font-size: 0.75rem;
+  color: #f4af00;
+  margin-left: 0.25rem;
 }
 
 /*# sourceMappingURL=ias.css.map */
