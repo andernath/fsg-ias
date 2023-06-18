@@ -148,7 +148,6 @@
   font-size: 1.5rem;
   line-height: 1.5rem;
   padding: 0 0.5rem 0.25rem 0.5rem;
-  cursor: text;
   word-wrap: break-word;
   word-break: break-word;
 }
@@ -162,7 +161,6 @@
   align-self: start;
   color: #fff;
   padding: 0 0.5rem 0.25rem 0.5rem;
-  cursor: text;
   word-wrap: break-word;
   word-break: break-word;
 }
@@ -170,6 +168,19 @@
   grid-area: class;
   align-self: start;
   background-color: rgba(255, 255, 255, 0.5);
+}
+
+.ias-fsg .editpen {
+  position: absolute;
+  right: 0;
+  top: 0.25rem;
+  display: none;
+  font-size: 0.75rem;
+  color: #1c1c1c;
+  margin-left: 0.25rem;
+}
+.ias-fsg .editpen--gold {
+  color: #f4af00;
 }
 
 .ias-fsg .reserves {
@@ -294,38 +305,52 @@
 }
 
 .ias-fsg .talent {
-  margin-bottom: 0.5rem;
-  flex-basis: 50%;
+  position: relative;
+  margin-bottom: 0.25rem;
+  margin-right: 0.5rem;
+  padding-left: 24px;
+  flex-basis: 100%;
   min-width: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .ias-fsg .talent__label {
   font-size: 1rem;
+  margin-right: 0.5rem;
 }
 .ias-fsg .talent__value {
-  position: relative;
-  margin-right: 0.5rem;
-  padding-right: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  background-color: #f4af00;
+  border-radius: 1rem;
+  padding: 0 1rem;
+}
+.ias-fsg .talent__value--edit {
+  height: 1rem;
+  text-align: right;
 }
 .ias-fsg .talent__image {
   cursor: pointer;
   position: absolute;
-  right: 4px;
-  top: -2px;
+  left: 0px;
+  top: 0px;
 }
 .ias-fsg .talent__poolmod {
   cursor: pointer;
   position: absolute;
   color: #f4af00;
-  font-size: 23px;
-  right: -1px;
-  top: -3px;
-  width: 40px;
+  font-size: 14px;
+  left: 0;
+  top: -1px;
+  width: 16px;
   text-align: center;
 }
 .ias-fsg .talent__poolmodremover {
   position: absolute;
-  right: 0;
-  bottom: -3px;
+  left: -5px;
+  top: -8px;
+  font-size: 12px;
 }
 
 .ias-fsg .visible {
@@ -334,14 +359,12 @@
 .ias-fsg .invisible {
   display: none;
 }
+.ias-fsg .viewmode {
+  cursor: text;
+  position: relative;
+}
 .ias-fsg .viewmode:hover .editpen {
   display: inline;
-}
-.ias-fsg .editpen {
-  display: none;
-  font-size: 0.75rem;
-  color: #f4af00;
-  margin-left: 0.25rem;
 }
 
 /*# sourceMappingURL=ias.css.map */

@@ -1,37 +1,51 @@
 .ias-fsg {
     .talent {
-        margin-bottom: 0.5rem;
-        flex-basis: 50%;
+        position: relative;
+        margin-bottom: 0.25rem;
+        margin-right: 0.5rem;
+        padding-left: 24px;
+        flex-basis: 100%;
         min-width: 100px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
 
         &__label {
             font-size: 1rem;
+            margin-right: 0.5rem;
         }
         &__value {
-            position: relative;
-            margin-right: 0.5rem;
-            padding-right: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            background-color: $bgGold;
+            border-radius: 1rem;
+            padding: 0 1rem;
+            &--edit {
+                height: 1rem;
+                text-align: right;
+            }
         }
         &__image {
             cursor: pointer;
             position: absolute;
-            right: 4px;
-            top: -2px;
+            left: 0px;
+            top: 0px;
         }
         &__poolmod {
             cursor: pointer;
             position: absolute;
             color: $fontGold;
-            font-size: 23px;
-            right: -1px;
-            top: -3px;
-            width: 40px;
+            font-size: 14px;
+            left: 0;
+            top: -1px;
+            width: 16px;
             text-align: center;
         }
         &__poolmodremover {
             position: absolute;
-            right: 0;
-            bottom: -3px;
+            left: -5px;
+            top: -8px;
+            font-size: 12px;
         }
     }
 }

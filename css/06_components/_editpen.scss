@@ -1,0 +1,15 @@
+.ias-fsg {
+    .editpen {
+        position: absolute;
+        right: 0;
+        top: 0.25rem;
+        display: none;
+        font-size: 0.75rem;
+        color: $fontDefault;
+        margin-left: 0.25rem;
+
+        &--gold {
+            color: $fontGold;
+        }
+    }
+}

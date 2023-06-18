@@ -17,7 +17,7 @@
                 <img src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100" />
             </div>
             <span class="actor__name viewmode" data-element="actorName">
-                {{actor.name}} <i class="editpen fa-solid fa-pen"></i>
+                {{actor.name}} <i class="editpen editpen--gold fa-solid fa-pen"></i>
             </span>
             <input class="actor__name--edit editmode invisible" name="name" type="text" value="{{actor.name}}"
                 data-element="actorNameEdit" data-last-value="{{actor.name}}" placeholder="{{localize 'IAS.Name' }}" />
@@ -27,7 +27,7 @@
                 {{else}}
                 <i>{{localize 'IAS.Class' }}</i>
                 {{/if}}
-                <i class="editpen fa-solid fa-pen"></i>
+                <i class="editpen editpen--gold fa-solid fa-pen"></i>
             </span>
             <input class="actor__class--edit editmode invisible" name="system.class" type="text"
                 value="{{system.class}}" data-element="actorClassEdit" data-last-value="{{system.class}}"
