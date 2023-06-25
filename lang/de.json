@@ -8,13 +8,20 @@
     "IAS.AttributesEmpathy": "Empathie",
     "IAS.AttributesPerception": "Wahrnehmung",
     "IAS.AttributesEgo": "Ego",
+
     "IAS.ReservesHealth": "Lebenspunkte",
     "IAS.ReservesStamina": "Ausdauer",
     "IAS.ReservesDrama": "Drama",
     "IAS.ReservesMoral": "Moral",
     "IAS.ReservesDamage": "Schaden",
     "IAS.ReservesArmor": "Rüstung",
+
+    "IAS.Skill": "Fertigkeit",
     "IAS.Skills": "Fertigkeiten",
+    "IAS.SkillEdit": "Fertigkeit anpassen",
+    "IAS.SkillDelete": "Fertigkeit löschen",
+
+
     "IAS.StatusStress": "Stress",
     "IAS.StatusExhaustion": "Erschöpfung",
     "IAS.StatusPain": "Schmerz",
@@ -26,5 +33,11 @@
     "IAS.Class": "Klasse",
     "IAS.PoolMod": "Pool Modifikator (Attributswert x Zähler)",
 
-    "IAS.AlertMaxPoolMod": "Du kannst maximal 2 Werte zu deinem Wurf addieren."
+    "IAS.AlertMaxPoolMod": "Du kannst maximal 2 Werte zu deinem Wurf addieren.",
+
+    "IAS.DeletionModal.Title": "{itemName} löschen",
+    "IAS.DeletionModal.Content": "Möchtest du {itemName} wirklich löschen?",
+
+    "IAS.Yes": "Ja",
+    "IAS.No": "Nein"
 }

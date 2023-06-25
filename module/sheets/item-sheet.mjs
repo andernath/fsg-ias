@@ -6,6 +6,7 @@ export class IASItemSheet extends ItemSheet {
     /** @override */
     static get defaultOptions() {
         return mergeObject(super.defaultOptions, {
+            classes: ["ias-fsg", "modal", "item"],
             width: 520,
             height: 480
         });

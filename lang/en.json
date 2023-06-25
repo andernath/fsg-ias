@@ -8,13 +8,19 @@
     "IAS.AttributesEmpathy": "Empathy",
     "IAS.AttributesPerception": "Perception",
     "IAS.AttributesEgo": "Ego",
+
     "IAS.ReservesHealth": "Health",
     "IAS.ReservesStamina": "Stamina",
     "IAS.ReservesDrama": "Drama",
     "IAS.ReservesMoral": "Moral",
     "IAS.ReservesDamage": "Damage",
     "IAS.ReservesArmor": "Armor",
+
+    "IAS.Skill": "Skill",
     "IAS.Skills": "Skills",
+    "IAS.SkillEdit": "Edit Skill",
+    "IAS.SkillDelete": "Delete Skill",
+
     "IAS.StatusStress": "Stress",
     "IAS.StatusExhaustion": "Exhaustion",
     "IAS.StatusPain": "Pain",
@@ -27,5 +33,11 @@
     "IAS.Class": "Class",
     "IAS.PoolMod": "Pool modificator (Attribute value x count)",
 
-    "IAS.AlertMaxPoolMod": "You can add a maximum of 2 values to your roll."
+    "IAS.AlertMaxPoolMod": "You can add a maximum of 2 values to your roll.",
+
+    "IAS.DeletionModal.Title": "Delete {itemName}",
+    "IAS.DeletionModal.Content": "Do you really want to delete {itemName}?",
+
+    "IAS.Yes": "Yes",
+    "IAS.No": "No"
 }

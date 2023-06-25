@@ -43,6 +43,14 @@
   color: #88660e;
 }
 
+.ias-fsg .modal__header {
+  display: flex;
+  background-color: #1c1c1c;
+  padding: 1rem;
+  align-items: center;
+  gap: 0.5rem;
+}
+
 .ias-fsg .nav {
   background: #f4af00;
   display: flex;
@@ -183,6 +191,15 @@
   color: #f4af00;
 }
 
+.ias-fsg.modal.item .item__name {
+  background-color: rgba(255, 255, 255, 0.5);
+  flex-basis: 100%;
+}
+.ias-fsg.modal.item .item__value {
+  background-color: rgba(255, 255, 255, 0.5);
+  flex-basis: 25%;
+}
+
 .ias-fsg .reserves {
   display: grid;
   grid-template-columns: 50% 50%;
@@ -312,12 +329,13 @@
   flex-basis: 100%;
   min-width: 100px;
   display: flex;
+  gap: 0.5rem;
   justify-content: space-between;
   align-items: center;
 }
 .ias-fsg .talent__label {
   font-size: 1rem;
-  margin-right: 0.5rem;
+  flex-basis: 100%;
 }
 .ias-fsg .talent__value {
   font-size: 1rem;
@@ -330,11 +348,29 @@
   height: 1rem;
   text-align: right;
 }
+.ias-fsg .talent__value:hover .talent__controls {
+  width: auto;
+  padding: 0 1rem;
+}
 .ias-fsg .talent__image {
   cursor: pointer;
   position: absolute;
   left: 0px;
   top: 0px;
+}
+.ias-fsg .talent__controls {
+  white-space: nowrap;
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  background-color: #f4af00;
+  border-radius: 1rem;
+  padding: 0;
+  width: 0;
+  overflow: hidden;
+  transition: width 0.2s, padding 0.4s;
 }
 .ias-fsg .talent__poolmod {
   cursor: pointer;

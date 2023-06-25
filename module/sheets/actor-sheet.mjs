@@ -53,18 +53,18 @@ export class IASActorSheet extends ActorSheet {
    *
    * @return {undefined}
    */
-  _prepareItems(context) {
-    const skills = [];
+    _prepareItems(context) {
+        const skills = [];
 
-    for (let i of context.items) {
-      i.img = i.img || DEFAULT_TOKEN;
-      if (i.type === 'skill') {
-        skills.push(i);
-      }
+        for (let i of context.items) {
+            i.img = i.img || DEFAULT_TOKEN;
+            if (i.type === 'skill') {
+                skills.push(i);
+            }
+        }
+
+        context.skills = skills;
     }
-
-    context.skills = skills;
-  }
 
 
     /** @override */
@@ -88,13 +88,32 @@ export class IASActorSheet extends ActorSheet {
             const sheetItem = $(ev.currentTarget).parents(".item");
             const item = this.actor.items.get(sheetItem.data("itemId"));
             item.sheet.render(true);
-          });
+        });
         html.find('.item-delete').click(ev => {
             const sheetItem = $(ev.currentTarget).parents(".item");
             const item = this.actor.items.get(sheetItem.data("itemId"));
-            item.delete();
-            sheetItem.slideUp(200, () => this.render(false));
-          });
+
+            let d = new Dialog({
+                title: game.i18n.format("IAS.DeletionModal.Title", {itemName: item.name}),
+                content: "<p>" + game.i18n.format("IAS.DeletionModal.Content", {itemName: item.name}) + "</p>",
+                buttons: {
+                    yes: {
+                        icon: '<i class="fas fa-check"></i>',
+                        label: game.i18n.localize("IAS.Yes"),
+                        callback: () => {
+                            item.delete();
+                            sheetItem.slideUp(200, () => this.render(false));
+                        }
+                    },
+                    no: {
+                        icon: '<i class="fas fa-times"></i>',
+                        label: game.i18n.localize("IAS.No"),
+                    }
+                },
+                default: "no"
+            });
+            d.render(true);
+        });
     }
 
     _onRoll(event) {
@@ -125,14 +144,14 @@ export class IASActorSheet extends ActorSheet {
             globalPoolMod = globalPoolMod + attributeVal.poolMod;
         }
 
-        if(globalPoolMod <2){
+        if (globalPoolMod < 2) {
             attributePoolMod++;
         } else {
             return ui.notifications.warn(game.i18n.localize(CONFIG.IAS.alert.maxPoolMod));
         }
 
         attributesCopy[attributeKey].poolMod = attributePoolMod;
-        this.actor.update({ "system.attributes": attributesCopy});
+        this.actor.update({ "system.attributes": attributesCopy });
     }
 
     _removeAttributePoolMod(event) {
@@ -142,7 +161,7 @@ export class IASActorSheet extends ActorSheet {
         let attributesCopy = duplicate(this.actor.system.attributes);
 
         attributesCopy[attributeKey].poolMod = 0;
-        this.actor.update({ "system.attributes": attributesCopy});
+        this.actor.update({ "system.attributes": attributesCopy });
     }
 
     _switchToEditMode(event) {
@@ -160,30 +179,30 @@ export class IASActorSheet extends ActorSheet {
         event.preventDefault();
         const editElement = event.currentTarget;
 
-        if(editElement.value === editElement.dataset.lastValue) {
+        if (editElement.value === editElement.dataset.lastValue) {
             const element = document.querySelector('[data-element*="' + editElement.dataset.element.slice(0, editElement.dataset.element.length - 4) + '"]');
 
             element.classList.toggle("invisible");
-            editElement.classList.toggle("invisible");        
+            editElement.classList.toggle("invisible");
         }
     }
 
 
-  /**
-   * @param {Event} event
-   * @private
-   */
-  async _onItemCreate(event) {
-    event.preventDefault();
-    const header = event.currentTarget;
-    const type = header.dataset.type;
-    const name = `New ${type.capitalize()}`;
+    /**
+     * @param {Event} event
+     * @private
+     */
+    async _onItemCreate(event) {
+        event.preventDefault();
+        const header = event.currentTarget;
+        const type = header.dataset.type;
+        const name = `New ${type.capitalize()}`;
 
-    const itemData = {
-      name: name,
-      type: type
-    };
+        const itemData = {
+            name: name,
+            type: type
+        };
 
-    return await Item.create(itemData, {parent: this.actor});
-  }
+        return await Item.create(itemData, { parent: this.actor });
+    }
 }

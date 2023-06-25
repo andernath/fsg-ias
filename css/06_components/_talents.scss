@@ -7,12 +7,13 @@
         flex-basis: 100%;
         min-width: 100px;
         display: flex;
+        gap: 0.5rem;
         justify-content: space-between;
         align-items: center;
 
         &__label {
             font-size: 1rem;
-            margin-right: 0.5rem;
+            flex-basis: 100%;
         }
         &__value {
             font-size: 1rem;
@@ -24,12 +25,32 @@
                 height: 1rem;
                 text-align: right;
             }
+            &:hover {
+                .talent__controls {
+                    width: auto;
+                    padding: 0 1rem;
+                }
+            }
         }
         &__image {
             cursor: pointer;
             position: absolute;
             left: 0px;
             top: 0px;
+        }
+        &__controls {
+            white-space: nowrap;
+            position: absolute;
+            top: 0;
+            right: 0;
+            font-size: 1rem;
+            font-weight: 600;
+            background-color: $bgGold;
+            border-radius: 1rem;
+            padding: 0;
+            width: 0;
+            overflow: hidden;
+            transition: width 0.2s, padding 0.4s;
         }
         &__poolmod {
             cursor: pointer;

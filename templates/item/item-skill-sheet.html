@@ -1,3 +1,10 @@
 <form class="{{cssClass}}" autocomplete="off">
-    HELLO WORLD
-  </form>
+  <header class="modal__header">
+    <img width="50" height="50" src="{{item.img}}" data-edit="img" title="{{item.name}}"/>
+    <input class="item__name" name="name" type="text" value="{{item.name}}" placeholder="{{localize 'IAS.Name'}}"/>
+    <input class="item__value" type="number" name="system.value" value="{{system.value}}" data-dtype="Number" />
+  </header>
+  <section>
+    {{editor system.description target="system.description" rollData=rollData owner=owner editable=editable}}
+  </section>
+</form>

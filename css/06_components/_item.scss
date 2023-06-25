@@ -1,0 +1,10 @@
+.ias-fsg.modal.item {
+    .item__name {
+        background-color: $inputBgOnDark;
+        flex-basis: 100%;
+    }
+    .item__value {
+        background-color: $inputBgOnDark;
+        flex-basis: 25%;
+    }
+}

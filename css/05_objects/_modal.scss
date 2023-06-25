@@ -1,0 +1,9 @@
+.ias-fsg .modal {
+    &__header {
+        display: flex;
+        background-color: $bgDark;
+        padding: 1rem;
+        align-items: center;
+        gap: 0.5rem;
+    }
+}
