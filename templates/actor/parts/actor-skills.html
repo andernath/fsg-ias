@@ -12,11 +12,11 @@
                 data-dtype="Number" min="{{attribute.min}}" />
             <img class="talent__image" height="16" width="16" src="systems/ias-fsg/icons/d8_0.png"
                 title="{{localize 'IAS.PoolMod' }}" />
-            <span class="talent__poolmod" title="{{localize 'IAS.PoolMod' }}" data-attribute="{{key}}">
+            <span class="talent__poolmod" title="{{localize 'IAS.PoolMod' }}" data-type="attribute" data-talent="{{key}}">
                 {{attribute.poolMod}}
             </span>
             {{#if attribute.poolMod}}
-            <a class="talent__poolmodremover" data-attribute="{{key}}"><i class="fa-solid fa-xmark"></i></a>
+            <a class="talent__poolmodremover" data-type="attribute" data-talent="{{key}}"><i class="fa-solid fa-xmark"></i></a>
             {{/if}}
         </div>
         {{/each}}
@@ -38,11 +38,11 @@
             </span>
             <img class="talent__image" height="16" width="16" src="systems/ias-fsg/icons/d8_0.png"
                 title="{{localize 'IAS.PoolMod' }}" />
-            <span class="talent__poolmod" title="{{localize 'IAS.PoolMod' }}" data-attribute="{{key}}">
+            <span class="talent__poolmod" title="{{localize 'IAS.PoolMod' }}" data-type="skill" data-talent="{{skill._id}}">
                 {{skill.system.poolMod}}
             </span>
             {{#if skill.system.poolMod}}
-            <a class="talent__poolmodremover" data-attribute="{{key}}"><i class="fa-solid fa-xmark"></i></a>
+            <a class="talent__poolmodremover" data-type="skill" data-talent="{{skill._id}}"><i class="fa-solid fa-xmark"></i></a>
             {{/if}}
         </div>
         {{/each}}

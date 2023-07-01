@@ -75,8 +75,8 @@ export class IASActorSheet extends ActorSheet {
 
         html.find('.status__img').click(this._toggleStatus.bind(this));
 
-        html.find('.talent__poolmod').click(this._addAttributePoolMod.bind(this));
-        html.find('.talent__poolmodremover').click(this._removeAttributePoolMod.bind(this));
+        html.find('.talent__poolmod').click(this._updateTalentPoolMod.bind(this));
+        html.find('.talent__poolmodremover').click(this._removeTalentPoolMod.bind(this));
 
         html.find('.viewmode').click(this._switchToEditMode.bind(this));
         html.find('.editmode').blur(this._switchToViewMode.bind(this));
@@ -94,8 +94,8 @@ export class IASActorSheet extends ActorSheet {
             const item = this.actor.items.get(sheetItem.data("itemId"));
 
             let d = new Dialog({
-                title: game.i18n.format("IAS.DeletionModal.Title", {itemName: item.name}),
-                content: "<p>" + game.i18n.format("IAS.DeletionModal.Content", {itemName: item.name}) + "</p>",
+                title: game.i18n.format("IAS.DeletionModal.Title", { itemName: item.name }),
+                content: "<p>" + game.i18n.format("IAS.DeletionModal.Content", { itemName: item.name }) + "</p>",
                 buttons: {
                     yes: {
                         icon: '<i class="fas fa-check"></i>',
@@ -131,37 +131,56 @@ export class IASActorSheet extends ActorSheet {
         element.classList.toggle("status__img--active");
     }
 
-    _addAttributePoolMod(event) {
+    _updateTalentPoolMod(event) {
         event.preventDefault();
         const element = event.currentTarget;
-        const attributeKey = element.dataset.attribute;
+        const talentKey = element.dataset.talent;
+        const talentType = element.dataset.type;
         let attributesCopy = duplicate(this.actor.system.attributes);
-        let attributePoolMod = attributesCopy[attributeKey].poolMod;
-        let globalPoolMod = 0;
+        let itemsCopy = duplicate(this.actor.items);
+        let talentPoolMod;
 
-        /*todo extract getGlobalPoolMod to actor*/
-        for (let attributeVal of Object.values(attributesCopy)) {
-            globalPoolMod = globalPoolMod + attributeVal.poolMod;
+        if (talentType === 'attribute') {
+            talentPoolMod = attributesCopy[talentKey].poolMod;
+            attributesCopy[talentKey].poolMod = this._increaseTalentPoolMod(attributesCopy, itemsCopy);
+            this.actor.update({ "system.attributes": attributesCopy });
+        } else {
+            talentPoolMod = itemsCopy.find(({ _id }) => _id === talentKey).system.poolMod;
+            itemsCopy.find(({ _id }) => _id === talentKey).system.poolMod = this._increaseTalentPoolMod(attributesCopy, itemsCopy);
+            this.actor.update({ "system.items": itemsCopy });
         }
+    }
 
-        if (globalPoolMod < 2) {
-            attributePoolMod++;
+    _increaseTalentPoolMod(attributesCopy, itemsCopy) {
+        if (this._getGlobalPoolMod(attributesCopy, itemsCopy) < 2) {
+            talentPoolMod++;
         } else {
             return ui.notifications.warn(game.i18n.localize(CONFIG.IAS.alert.maxPoolMod));
         }
-
-        attributesCopy[attributeKey].poolMod = attributePoolMod;
-        this.actor.update({ "system.attributes": attributesCopy });
+        return talentPoolMod;
     }
 
-    _removeAttributePoolMod(event) {
+    _removeTalentPoolMod(event) {
         event.preventDefault();
         const element = event.currentTarget;
-        const attributeKey = element.dataset.attribute;
+        const attributeKey = element.dataset.talent;
         let attributesCopy = duplicate(this.actor.system.attributes);
 
         attributesCopy[attributeKey].poolMod = 0;
         this.actor.update({ "system.attributes": attributesCopy });
+    }
+
+    _getGlobalPoolMod(attributesCopy, itemsCopy) {
+        let globalPoolMod = 0;
+
+        for (let attribute of Object.values(attributesCopy)) {
+            globalPoolMod = globalPoolMod + attribute.poolMod;
+        }
+        for (let item of Object.values(itemsCopy)) {
+            globalPoolMod = globalPoolMod + item.poolMod;
+        }
+
+        return globalPoolMod;
     }
 
     _switchToEditMode(event) {
