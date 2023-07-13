@@ -136,23 +136,25 @@ export class IASActorSheet extends ActorSheet {
         const element = event.currentTarget;
         const talentKey = element.dataset.talent;
         const talentType = element.dataset.type;
-        let attributesCopy = duplicate(this.actor.system.attributes);
-        let itemsCopy = duplicate(this.actor.items);
+        let actor = this.actor;
+        let attributesCopy = duplicate(actor.system.attributes);
+        let itemsCopy = duplicate(actor.items);
         let talentPoolMod;
+        const globalPoolMod = this._getGlobalPoolMod(attributesCopy, itemsCopy);
 
         if (talentType === 'attribute') {
             talentPoolMod = attributesCopy[talentKey].poolMod;
-            attributesCopy[talentKey].poolMod = this._increaseTalentPoolMod(attributesCopy, itemsCopy);
-            this.actor.update({ "system.attributes": attributesCopy });
+            attributesCopy[talentKey].poolMod = this._increaseTalentPoolMod(talentPoolMod, globalPoolMod);
+            actor.update({ "system.attributes": attributesCopy });
         } else {
             talentPoolMod = itemsCopy.find(({ _id }) => _id === talentKey).system.poolMod;
-            itemsCopy.find(({ _id }) => _id === talentKey).system.poolMod = this._increaseTalentPoolMod(attributesCopy, itemsCopy);
-            this.actor.update({ "system.items": itemsCopy });
+            itemsCopy.find(({ _id }) => _id === talentKey).system.poolMod = this._increaseTalentPoolMod(talentPoolMod, globalPoolMod);
+            actor.update({ "items": itemsCopy });
         }
     }
 
-    _increaseTalentPoolMod(attributesCopy, itemsCopy) {
-        if (this._getGlobalPoolMod(attributesCopy, itemsCopy) < 2) {
+    _increaseTalentPoolMod(talentPoolMod, globalPoolMod) {
+        if (globalPoolMod < 2) {
             talentPoolMod++;
         } else {
             return ui.notifications.warn(game.i18n.localize(CONFIG.IAS.alert.maxPoolMod));
@@ -163,11 +165,19 @@ export class IASActorSheet extends ActorSheet {
     _removeTalentPoolMod(event) {
         event.preventDefault();
         const element = event.currentTarget;
-        const attributeKey = element.dataset.talent;
-        let attributesCopy = duplicate(this.actor.system.attributes);
+        const talentKey = element.dataset.talent;
+        const talentType = element.dataset.type;
+        let actor = this.actor;
+        let attributesCopy = duplicate(actor.system.attributes);
+        let itemsCopy = duplicate(actor.items);
 
-        attributesCopy[attributeKey].poolMod = 0;
-        this.actor.update({ "system.attributes": attributesCopy });
+        if (talentType === 'attribute') {
+            attributesCopy[talentKey].poolMod = 0;
+            actor.update({ "system.attributes": attributesCopy });
+        } else {
+            itemsCopy.find(({ _id }) => _id === talentKey).system.poolMod = 0;
+            actor.update({ "items": itemsCopy });
+        }
     }
 
     _getGlobalPoolMod(attributesCopy, itemsCopy) {
@@ -177,7 +187,7 @@ export class IASActorSheet extends ActorSheet {
             globalPoolMod = globalPoolMod + attribute.poolMod;
         }
         for (let item of Object.values(itemsCopy)) {
-            globalPoolMod = globalPoolMod + item.poolMod;
+            globalPoolMod = globalPoolMod + item.system.poolMod;
         }
 
         return globalPoolMod;
