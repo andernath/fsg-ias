@@ -26,11 +26,15 @@
     "IAS.StatusPain": "Pain",
     "IAS.StatusHunger": "Hunger",
     "IAS.StatusMisc": "Misc",
+
     "IAS.SpecialSkills": "Special Skills",
-    
+    "IAS.SpecialSkillEdit": "Edit Special Skill",
+    "IAS.SpecialSkillDelete": "Delete Special Skills",
+
 
     "IAS.Name": "Name",
     "IAS.Class": "Class",
+    "IAS.Talents": "Talents",
     "IAS.PoolMod": "Pool modificator (Attribute value x count)",
 
     "IAS.AlertMaxPoolMod": "You can add a maximum of 2 values to your roll.",

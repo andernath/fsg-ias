@@ -35,8 +35,8 @@
         &__image {
             cursor: pointer;
             position: absolute;
-            left: 0px;
-            top: 0px;
+            left: 0;
+            top: 0;
         }
         &__controls {
             white-space: nowrap;
@@ -67,6 +67,31 @@
             left: -5px;
             top: -8px;
             font-size: 12px;
+        }
+    }
+    .special-skills {
+        .talent {
+            align-items: baseline;
+            flex-direction: column;
+            gap: 0;
+            padding-left: 0;
+            &__label {
+                background-color: $bgGold;
+                width: 100%;
+                padding: 0.25rem 2.5rem 0.25rem 0.5rem;
+                border-top-right-radius: 0.5rem;
+                border-top-left-radius: 0.5rem;
+            }
+            &__description {
+                width: 100%;
+                padding: 0.25rem;
+                border: 3px solid $borderGold;
+            }
+            &__controls {
+                width: auto;
+                top: 0.25rem;
+                right: 0.25rem;
+            }
         }
     }
 }

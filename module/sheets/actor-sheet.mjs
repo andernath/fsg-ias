@@ -9,7 +9,7 @@ export class IASActorSheet extends ActorSheet {
             template: "systems/ias-fsg/templates/actor/actor-sheet.html",
             width: 600,
             height: 600,
-            tabs: [{ navSelector: ".nav", contentSelector: ".sheet__body", initial: "skills" }]
+            tabs: [{ navSelector: ".nav", contentSelector: ".sheet__body", initial: "talents" }]
         });
     }
 
@@ -49,21 +49,26 @@ export class IASActorSheet extends ActorSheet {
     }
 
     /**
-   * @param {Object} actorData
-   *
-   * @return {undefined}
-   */
+     * @param {Object} actorData
+     *
+     * @return {undefined}
+     */
     _prepareItems(context) {
         const skills = [];
+        const specialSkills = [];
 
         for (let i of context.items) {
             i.img = i.img || DEFAULT_TOKEN;
             if (i.type === 'skill') {
                 skills.push(i);
             }
+            if (i.type === 'specialSkill') {
+                specialSkills.push(i);
+            }
         }
 
         context.skills = skills;
+        context.specialSkills = specialSkills;
     }
 
 

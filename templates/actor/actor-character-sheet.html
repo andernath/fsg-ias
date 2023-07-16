@@ -48,8 +48,7 @@
         </div>
     </section>
     <nav class="nav tabs" data-group="primary">
-        {{!-- Default tab is specified in actor-sheet.mjs --}}
-        <a class="nav__item" data-tab="skills">Skills*</a>
+        <a class="nav__item" data-tab="talents">{{localize 'IAS.Talents' }}</a>
         <a class="nav__item" data-tab="bio">Bio*</a>
         <a class="nav__roll">
             <img class="img d8 rollable" src="systems/ias-fsg/icons/d8.png" data-roll="d8+@rollMod">
@@ -58,7 +57,7 @@
         <a class="nav__item" data-tab="spells">Spells*</a>
     </nav>
     <section class="sheet__body">
-        {{> "systems/ias-fsg/templates/actor/parts/actor-skills.html"}}
+        {{> "systems/ias-fsg/templates/actor/parts/actor-talents.html"}}
         {{> "systems/ias-fsg/templates/actor/parts/actor-bio.html"}}
         {{> "systems/ias-fsg/templates/actor/parts/actor-items.html"}}
     </section>

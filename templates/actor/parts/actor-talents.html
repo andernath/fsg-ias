@@ -1,0 +1,66 @@
+<div class="sheet__content sheet__content--talents tab" data-group="primary" data-tab="talents">
+    <div class="sheet__left">
+        <h2>{{localize 'IAS.Attributes' }}</h2>
+        {{#each system.attributes as |attribute key|}}
+        <div class="talent">
+            <span class="talent__label">{{attribute.label}}</span>
+            <span class="talent__value viewmode" data-element="attribute{{key}}">
+                {{attribute.value}} <i class="editpen fa-solid fa-pen"></i>
+            </span>
+            <input class="talent__value--edit editmode invisible" type="number" name="system.attributes.{{key}}.value"
+                   value="{{attribute.value}}" data-element="attribute{{key}}Edit" data-last-value="{{attribute.value}}"
+                   data-dtype="Number" min="{{attribute.min}}" />
+            <img class="talent__image" height="16" width="16" src="systems/ias-fsg/icons/d8_0.png"
+                 title="{{localize 'IAS.PoolMod' }}" />
+            <span class="talent__poolmod" title="{{localize 'IAS.PoolMod' }}" data-type="attribute" data-talent="{{key}}">
+                {{attribute.poolMod}}
+            </span>
+            {{#if attribute.poolMod}}
+            <a class="talent__poolmodremover" data-type="attribute" data-talent="{{key}}"><i class="fa-solid fa-xmark"></i></a>
+            {{/if}}
+        </div>
+        {{/each}}
+        <h2>
+            {{localize 'IAS.Skills' }}
+            <a class="item-control item-create" data-type="skill"><i class="fa-solid fa-circle-plus"></i></a>
+        </h2>
+        {{#each skills}}
+        <div class="item talent" data-item-id="{{_id}}">
+            <span class="talent__label">{{name}}</span>
+            <span class="talent__value">
+                {{system.value}}
+                <div class="talent__controls">
+                    <a class="item-control item-delete" title="{{localize 'IAS.SkillDelete'}}"><i class="fas fa-trash"></i></a>
+                    <a class="item-control item-edit" title="{{localize 'IAS.SkillEdit'}}"><i class="fas fa-edit"></i></a>
+                </div>
+            </span>
+            <img class="talent__image" height="16" width="16" src="systems/ias-fsg/icons/d8_0.png"
+                 title="{{localize 'IAS.PoolMod' }}" />
+            <span class="talent__poolmod" title="{{localize 'IAS.PoolMod' }}" data-type="skill" data-talent="{{_id}}">
+                {{system.poolMod}}
+            </span>
+            {{#if system.poolMod}}
+            <a class="talent__poolmodremover" data-type="skill" data-talent="{{_id}}"><i class="fa-solid fa-xmark"></i></a>
+            {{/if}}
+        </div>
+        {{/each}}
+    </div>
+    <div class="sheet__right special-skills">
+        <h2>
+            {{localize 'IAS.SpecialSkills' }}
+            <a class="item-control item-create" data-type="specialSkill"><i class="fa-solid fa-circle-plus"></i></a>
+        </h2>
+        {{#each specialSkills}}
+        <div class="item talent" data-item-id="{{_id}}">
+            <span class="talent__label">{{name}}</span>
+            <span class="talent__description">
+                {{{ system.description }}}
+                <div class="talent__controls">
+                    <a class="item-control item-delete" title="{{localize 'IAS.SpecialSkillDelete'}}"><i class="fas fa-trash"></i></a>
+                    <a class="item-control item-edit" title="{{localize 'IAS.SpecialSkillEdit'}}"><i class="fas fa-edit"></i></a>
+                </div>
+            </span>
+        </div>
+        {{/each}}
+    </div>
+</div>

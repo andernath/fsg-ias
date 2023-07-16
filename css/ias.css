@@ -33,6 +33,7 @@
 .ias-fsg h3 {
   border: none;
   flex-basis: 100%;
+  margin-top: 1.5rem;
 }
 .ias-fsg h2 {
   font-weight: 600;
@@ -111,29 +112,24 @@
 }
 .ias-fsg .sheet__body {
   background-color: #f4e5bf;
-  padding: 1.5rem 1rem;
+  padding: 0.5rem 1rem;
 }
 .ias-fsg .sheet__content {
   display: none;
 }
-.ias-fsg .sheet__content--skills.active {
+.ias-fsg .sheet__content--talents.active {
   display: grid;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: 40% 60%;
   grid-template-rows: auto;
   column-gap: 1rem;
   row-gap: 1rem;
-  grid-template-areas: "attributes specialskills" "skills specialskills";
+  grid-template-areas: "left right";
 }
-.ias-fsg .sheet__content--skills.active .attributes {
-  grid-area: attributes;
-  display: flex;
-  flex-wrap: wrap;
+.ias-fsg .sheet__content--talents.active .sheet__left {
+  grid-area: left;
 }
-.ias-fsg .sheet__content--skills.active .skills {
-  grid-area: skills;
-}
-.ias-fsg .sheet__content--skills.active .status {
-  grid-area: specialskills;
+.ias-fsg .sheet__content--talents.active .sheet__right {
+  grid-area: right;
 }
 
 .ias-fsg .actor {
@@ -355,8 +351,8 @@
 .ias-fsg .talent__image {
   cursor: pointer;
   position: absolute;
-  left: 0px;
-  top: 0px;
+  left: 0;
+  top: 0;
 }
 .ias-fsg .talent__controls {
   white-space: nowrap;
@@ -387,6 +383,29 @@
   left: -5px;
   top: -8px;
   font-size: 12px;
+}
+.ias-fsg .special-skills .talent {
+  align-items: baseline;
+  flex-direction: column;
+  gap: 0;
+  padding-left: 0;
+}
+.ias-fsg .special-skills .talent__label {
+  background-color: #f4af00;
+  width: 100%;
+  padding: 0.25rem 2.5rem 0.25rem 0.5rem;
+  border-top-right-radius: 0.5rem;
+  border-top-left-radius: 0.5rem;
+}
+.ias-fsg .special-skills .talent__description {
+  width: 100%;
+  padding: 0.25rem;
+  border: 3px solid #f4af00;
+}
+.ias-fsg .special-skills .talent__controls {
+  width: auto;
+  top: 0.25rem;
+  right: 0.25rem;
 }
 
 .ias-fsg .visible {

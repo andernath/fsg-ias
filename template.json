@@ -122,19 +122,22 @@
         }
     },
     "Item": {
-        "types": ["item", "skill"],
+        "types": ["item", "skill", "specialSkill"],
         "templates": {
-          "base": {
-            "description": ""
-          }
+            "base": {
+                "description": ""
+            }
         },
         "item": {
-          "templates": ["base"]
+            "templates": ["base"]
         },
         "skill": {
-          "templates": ["base"],
-          "value": 0,
-          "poolMod": 0
+            "templates": ["base"],
+            "value": 0,
+            "poolMod": 0
+        },
+        "specialSkill": {
+            "templates": ["base"]
         }
-      }
+    }
 }
