@@ -26,7 +26,7 @@ export class IASActorSheet extends ActorSheet {
         context.system = actorData.system;
         context.flags = actorData.flags;
 
-        if (actorData.type == 'character') {
+        if (actorData.type === 'character') {
             this._prepareCharacterData(context);
             this._prepareItems(context);
         }
@@ -98,7 +98,7 @@ export class IASActorSheet extends ActorSheet {
             const sheetItem = $(ev.currentTarget).parents(".item");
             const item = this.actor.items.get(sheetItem.data("itemId"));
 
-            let d = new Dialog({
+            let dialog = new Dialog({
                 title: game.i18n.format("IAS.DeletionModal.Title", { itemName: item.name }),
                 content: "<p>" + game.i18n.format("IAS.DeletionModal.Content", { itemName: item.name }) + "</p>",
                 buttons: {
@@ -117,7 +117,15 @@ export class IASActorSheet extends ActorSheet {
                 },
                 default: "no"
             });
-            d.render(true);
+            dialog.render(true);
+        });
+        html.find('.item-collapse').click(ev => {
+            const $toggleButton = $(ev.currentTarget).find(".fa-solid");
+            const $collapsableContent = $(ev.currentTarget).parents(".item").find(".talent__description");
+
+            $toggleButton.toggleClass("fa-chevron-up");
+            $toggleButton.toggleClass("fa-chevron-down");
+            $collapsableContent.toggleClass("talent__description--open");
         });
     }
 

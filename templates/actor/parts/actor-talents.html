@@ -53,13 +53,16 @@
         {{#each specialSkills}}
         <div class="item talent" data-item-id="{{_id}}">
             <span class="talent__label">{{name}}</span>
-            <span class="talent__description">
-                {{{ system.description }}}
-                <div class="talent__controls">
-                    <a class="item-control item-delete" title="{{localize 'IAS.SpecialSkillDelete'}}"><i class="fas fa-trash"></i></a>
-                    <a class="item-control item-edit" title="{{localize 'IAS.SpecialSkillEdit'}}"><i class="fas fa-edit"></i></a>
-                </div>
-            </span>
+            <div class="talent__description">
+                <span class="talent__description-inner">
+                    {{{ system.description }}}
+                </span>
+            </div>
+            <div class="talent__controls">
+                <a class="item-control item-collapse" title="{{localize 'IAS.ToggleCollapse'}}"><i class="fa-solid fa-chevron-down"></i></a>
+                <a class="item-control item-delete" title="{{localize 'IAS.SpecialSkillDelete'}}"><i class="fas fa-trash"></i></a>
+                <a class="item-control item-edit" title="{{localize 'IAS.SpecialSkillEdit'}}"><i class="fas fa-edit"></i></a>
+            </div>
         </div>
         {{/each}}
     </div>

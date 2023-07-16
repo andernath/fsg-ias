@@ -393,14 +393,40 @@
 .ias-fsg .special-skills .talent__label {
   background-color: #f4af00;
   width: 100%;
-  padding: 0.25rem 2.5rem 0.25rem 0.5rem;
+  padding: 0.25rem 4rem 0.25rem 0.5rem;
   border-top-right-radius: 0.5rem;
   border-top-left-radius: 0.5rem;
 }
 .ias-fsg .special-skills .talent__description {
-  width: 100%;
+  display: grid;
   padding: 0.25rem;
   border: 3px solid #f4af00;
+  width: 100%;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.5s ease-out;
+  min-height: 60px;
+}
+.ias-fsg .special-skills .talent__description-inner {
+  position: relative;
+  overflow: hidden;
+  min-height: 50px;
+}
+.ias-fsg .special-skills .talent__description-inner:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(0deg, #f4e5bf 10%, rgba(244, 229, 191, 0) 100%);
+  opacity: 1;
+  transition: opacity 0.5s ease-out;
+}
+.ias-fsg .special-skills .talent__description--open {
+  grid-template-rows: 1fr;
+}
+.ias-fsg .special-skills .talent__description--open .talent__description-inner:after {
+  opacity: 0;
 }
 .ias-fsg .special-skills .talent__controls {
   width: auto;

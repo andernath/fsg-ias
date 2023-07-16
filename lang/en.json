@@ -43,5 +43,6 @@
     "IAS.DeletionModal.Content": "Do you really want to delete {itemName}?",
 
     "IAS.Yes": "Yes",
-    "IAS.No": "No"
+    "IAS.No": "No",
+    "IAS.ToggleCollapse": "Show more or less"
 }

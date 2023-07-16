@@ -43,5 +43,6 @@
     "IAS.DeletionModal.Content": "Möchtest du {itemName} wirklich löschen?",
 
     "IAS.Yes": "Ja",
-    "IAS.No": "Nein"
+    "IAS.No": "Nein",
+    "IAS.ToggleCollapse": "Inhalt ein- oder ausblenden"
 }
