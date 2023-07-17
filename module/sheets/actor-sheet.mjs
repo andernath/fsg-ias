@@ -197,10 +197,14 @@ export class IASActorSheet extends ActorSheet {
         let globalPoolMod = 0;
 
         for (let attribute of Object.values(attributesCopy)) {
-            globalPoolMod = globalPoolMod + attribute.poolMod;
+            if(Number.isInteger(attribute.poolMod)) {
+                globalPoolMod = globalPoolMod + attribute.poolMod;
+            }
         }
         for (let item of Object.values(itemsCopy)) {
-            globalPoolMod = globalPoolMod + item.system.poolMod;
+            if(Number.isInteger(item.system.poolMod)) {
+                globalPoolMod = globalPoolMod + item.system.poolMod;
+            }
         }
 
         return globalPoolMod;
